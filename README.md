@@ -1,33 +1,83 @@
 # PRODIGY_ML_03
 
-Implementation of support vector machine (SVM) to classify images of cats and dogs from the Kaggle dataset.
+# Cats vs. Dogs Image Classification
 
-Project Description: Using the Kaggle dataset to use a Support Vector Machine (SVM) to classify images of cats and dogs. The goal is to develop a robust image classification model that can distinguish between these two groups.
+This project demonstrates the use of a Support Vector Machine (SVM) classifier to distinguish between images of cats and dogs.
 
-Full instructions:
+## Table of Contents
+- [Dataset](#dataset)
+- [Requirements](#requirements)
+- [Installation](#installation)
+- [Usage](#usage)
+- [Model Evaluation](#model-evaluation)
+- [Visualization](#visualization)
+- [Acknowledgements](#acknowledgements)
 
-Data Analysis: Identify and understand patterns in the Kaggle dataset containing cat and dog images.
+## Dataset
+The dataset used in this project is the "Cats and Dogs" dataset from Kaggle, which includes images of cats and dogs divided into training and testing sets.
 
-Data preprocessing: Perform preprocessing operations such as image resizing, normalization, and classification of datasets for training and testing.
+## Requirements
+- Python 3.6+
+- pandas
+- numpy
+- scikit-learn
+- tensorflow
+- keras
+- scikit-image
+- matplotlib
 
-Feature extraction: Extract relevant features from the image as input to the SVM model.
+## Installation
+Clone the repository and navigate to the project directory:
 
-Model implementation: Design and train a support vector machine model for image classification using feature selection.
+```bash
+git clone https://github.com/your-username/cats-vs-dogs.git
+cd cats-vs-dogs
+```
 
-Model evaluation: Evaluate the model's performance in a separate test by determining parameters such as accuracy, precision, recall, and F1 score.
+Install the required packages:
 
-Fine-tuning: Explore hyperparameter tuning to optimize the SVM model for better performance.
+```bash
+pip install pandas numpy scikit-learn tensorflow keras scikit-image matplotlib
+```
 
-Knowledge gained:
+## Usage
 
-Image Classification: Learn how to use machine learning to create image classification models.
+### Kaggle API Setup
+Ensure you have your Kaggle API key (`kaggle.json`) and place it in the appropriate directory.
 
-Support Vector Machine (SVM): An SVM that can perform efficient and effective binary classification function.
+### Dataset Download
+Download the dataset from Kaggle and unzip it:
 
-Data Preprocessing: Improve capabilities to prepare image data for machine learning, including resizing, normalization, and dataset segmentation.
+```bash
+!mkdir -p ~/.kaggle
+!cp kaggle.json ~/.kaggle
+!kaggle datasets download -d stefancomanita/cats-and-dogs-40
+!unzip cats-and-dogs-40.zip -d /content
+```
 
-Model Evaluation: Learn how to use basic metrics to evaluate model performance and interpret results for image classification.
+### Feature Extraction
+The images are resized to 40x40 pixels and flattened for input into the SVM classifier.
 
-Kaggle dataset: Learn real data on Kaggle construction and get a deep understanding of the issues and precautions in making datasets.
+### Training
+Split the data into training and testing sets, and train the SVM classifier using GridSearchCV for hyperparameter tuning.
 
-Work done during the machine learning internship at Prodigy Infotech.
+### Testing
+Evaluate the model on the test set and visualize the results.
+
+### Running the Code
+Execute the code to train the model and visualize predictions:
+
+```python
+python classify_cats_dogs.py
+```
+
+## Model Evaluation
+The model achieves an accuracy of 62.5%. The classification report provides precision, recall, and f1-score for both classes.
+
+## Visualization
+Visualize sample predictions using matplotlib to see how well the model classifies new images.
+
+## Acknowledgements
+- The dataset source for "Cats and Dogs" from Kaggle.
+- The scikit-learn, pandas, tensorflow, keras, scikit-image, and matplotlib teams for their amazing libraries.
+
